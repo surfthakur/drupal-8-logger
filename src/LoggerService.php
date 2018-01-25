@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Drupal\rsvplist\LoggerService;
+ * Drupal\surflogger\LoggerService;
  */
 
 namespace Drupal\surflogger;

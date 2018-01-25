@@ -4,7 +4,8 @@ This module over-rides the default drupal loggers with it's own. This is to make
 
 The standard way to log in drupal would be to inject the class \Drupal\surflogger\LoggerService and then use the logging methods such as:
 
-$this->log->error("Message here", ['array_key' => 'array_value']);
+    $this->log->error("Message here", ['array_key' => 'array_value']);
+
 This would add your log message to a file in (for example): var/log/2016/12/31.log.
 
 There are also two additional parameters that can be passed to all the logging methods. They are explained in more detail below.
@@ -18,7 +19,7 @@ There are also two additional parameters that can be passed to all the logging m
 
 create a protected  var
 
-   protected $log;
+    protected $log;
 
 
 

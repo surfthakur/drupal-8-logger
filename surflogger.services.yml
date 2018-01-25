@@ -1,0 +1,3 @@
+services:
+  rsvplist.logger:
+    class: Drupal\surflogger\LoggerService

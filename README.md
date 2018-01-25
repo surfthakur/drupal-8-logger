@@ -14,7 +14,7 @@ There are also two additional parameters that can be passed to all the logging m
 # how to use
 
     use Drupal\surflogger\LoggerService;
-
+    use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
 create a protected  var
@@ -34,7 +34,7 @@ use di to add to constructor by
       $this->log = $loggerService;
     }
     
-    
+dont forget to add to create     
     
     public static function create(ContainerInterface $container){
       return new static(

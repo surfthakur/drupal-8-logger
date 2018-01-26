@@ -13,8 +13,6 @@ The module depends on the following; installing through composer will fetch thes
     "monolog/monolog"
     "psr/log"
 
-There are also two additional parameters that can be passed to all the logging methods. They are explained in more detail below.
-
 
 # how to use
 

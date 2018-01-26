@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Logger service
  * Drupal\surflogger\LoggerService;
  */
 
@@ -12,6 +13,16 @@ use \Monolog\Logger as MonologLogger;
 use \Monolog\Handler\StreamHandler as MonologStreamHandler;
 
 class LoggerService implements LoggerInterface {
+  
+  /**
+   * creates the relevant paths to logs
+   *
+   * @param null $name
+   * @param null $logFile
+   * @param bool $useLocking
+   *
+   * @return $this
+   */
   
   protected function logger($name = NULL, $logFile = NULL, $useLocking = FALSE){
     
@@ -45,6 +56,14 @@ class LoggerService implements LoggerInterface {
     );
   }
   
+  /**
+   * displays alert log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function alert(
     $message,
     array $context = [],
@@ -54,6 +73,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addAlert($message, $context);
   }
   
+  /**
+   * displays critical log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function critical(
     $message,
     array $context = [],
@@ -63,6 +90,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addCritical($message, $context);
   }
   
+  /**
+   * displays as debug log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function debug(
     $message,
     array $context = [],
@@ -72,6 +107,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addDebug($message, $context);
   }
   
+  /**
+   * displays as emergency
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function emergency(
     $message,
     array $context = [],
@@ -81,6 +124,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addEmergency($message, $context);
   }
   
+  /**
+   * displays as error logs
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function error(
     $message,
     array $context = [],
@@ -90,6 +141,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addError($message, $context);
   }
   
+  /**
+   * displays info log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function info(
     $message,
     array $context = [],
@@ -99,6 +158,15 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->addInfo($message, $context);
   }
   
+  /**
+   * displays as standard log
+   *
+   * @param mixed  $level
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function log(
     $level,
     $message,
@@ -109,6 +177,14 @@ class LoggerService implements LoggerInterface {
     $this->logger($name, $logFile)->log($level, $message, $context);
   }
   
+  /**
+   * displays as notice log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   public function notice(
     $message,
     array $context = [],
@@ -117,6 +193,15 @@ class LoggerService implements LoggerInterface {
   ){
     $this->logger($name, $logFile)->addNotice($message, $context);
   }
+  
+  /**
+   * displays as warning log
+   *
+   * @param string $message
+   * @param array  $context
+   * @param null   $name
+   * @param null   $logFile
+   */
   
   public function warning(
     $message,
